@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nina — Maison de Beauté | Institut & Formations esthétiques à Crémieu</title>
+<meta name="description" content="Nina — Maison de Beauté, institut de beauté à Crémieu. Formations professionnelles en esthétique, soins & rendez-vous découverte, boutique de produits de beauté.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='8' y='8' width='84' height='84' fill='none' stroke='%23211C15' stroke-width='4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5EEE2;
+    --cream-deep:#EBDFC9;
+    --paper:#FBF7EF;
+    --ink:#211C15;
+    --ink-soft:#5B4E3C;
+    --tan:#C7A574;
+    --tan-deep:#9C7C4B;
+    --taupe:#8A6F4E;
+    --taupe-deep:#4A3A26;
+    --sage:#93A87E;
+    --sage-deep:#4E5D40;
+    --line:rgba(33,28,21,0.15);
+    --line-on-dark:rgba(251,247,239,0.2);
+    --max:1180px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:'Playfair Display',serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:0.01em;
+  }
+  .script{font-family:'Parisienne',cursive; font-weight:400; letter-spacing:0.01em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){ .wrap{padding:0 20px;} }
+
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{content:'';width:22px;height:1px;display:inline-block;}
+
+  /* motif: line - heart - line, recurring brand signature */
+  .motif{display:flex; align-items:center; gap:14px; margin:22px 0;}
+  .motif .l{height:1px; flex:1; background:currentColor; opacity:0.35;}
+  .motif svg{width:16px;height:16px; flex:none;}
+
+  /* Buttons */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 28px;
+    border-radius:2px;
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    font-weight:700;
+    letter-spacing:0.03em;
+    text-transform:uppercase;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:transform .25s ease, background .25s ease, color .25s ease, border-color .25s ease;
+    white-space:nowrap;
+  }
+  .btn:focus-visible{outline:2px solid var(--tan-deep); outline-offset:3px;}
+  .btn-tan{background:var(--tan-deep); color:var(--paper);}
+  .btn-tan:hover{background:#86673D; transform:translateY(-1px);}
+  .btn-taupe{background:var(--taupe-deep); color:var(--paper);}
+  .btn-taupe:hover{background:#3A2E1D; transform:translateY(-1px);}
+  .btn-sage{background:var(--sage-deep); color:var(--paper);}
+  .btn-sage:hover{background:#3F4B33; transform:translateY(-1px);}
+  .btn-outline-dark{border-color:var(--line-on-dark); color:var(--paper);}
+  .btn-outline-dark:hover{border-color:var(--paper); background:rgba(251,247,239,0.08);}
+  .btn-outline-light{border-color:var(--ink); color:var(--ink);}
+  .btn-outline-light:hover{background:rgba(33,28,21,0.05);}
+  .btn-ghost{color:var(--ink); font-weight:700; padding:15px 4px; border-bottom:1px solid var(--ink); text-transform:none; letter-spacing:0;}
+
+  /* NAV */
+  header.site-nav{
+    position:sticky; top:0; z-index:100;
+    background:rgba(245,238,226,0.92);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    max-width:var(--max); margin:0 auto; padding:8px 32px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  @media(max-width:640px){ .nav-inner{padding:6px 20px;} }
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-logo{height:74px; width:auto; display:block;}
+  .footer-brand .brand-logo{height:82px; filter:invert(1) brightness(1.4);}
+  @media(max-width:640px){ .brand-logo{height:58px;} }
+  nav.primary{display:flex; align-items:center; gap:28px;}
+  nav.primary a.nav-link{
+    font-size:12.5px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase;
+    display:flex; align-items:center; gap:7px;
+    color:var(--ink-soft);
+    transition:color .2s ease;
+  }
+  nav.primary a.nav-link:hover{color:var(--ink);}
+  nav.primary a.nav-link .dot{width:7px;height:7px;border-radius:50%; display:inline-block;}
+  .dot-tan{background:var(--tan-deep);}
+  .dot-taupe{background:var(--taupe);}
+  .dot-sage{background:var(--sage-deep);}
+  .nav-cta{display:flex; align-items:center; gap:16px;}
+  .nav-tel{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--ink-soft);}
+  .burger{display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px;}
+  .burger span{width:22px; height:2px; background:var(--ink); display:block;}
+  @media(max-width:920px){
+    nav.primary{display:none;}
+    .nav-tel{display:none;}
+    .burger{display:flex;}
+  }
+  .mobile-menu{display:none; flex-direction:column; padding:8px 20px 22px; border-top:1px solid var(--line); background:var(--cream);}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 0; font-size:14px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--line);}
+  .mobile-menu .btn{margin-top:14px; justify-content:center;}
+
+  /* HERO */
+  .hero{position:relative; overflow:hidden; padding:96px 0 84px; background:var(--cream);}
+  .hero-art{position:absolute; inset:0; opacity:0.55; pointer-events:none;}
+  .hero-inner{position:relative; z-index:2; max-width:var(--max); margin:0 auto; padding:0 32px;}
+  @media(max-width:640px){ .hero-inner{padding:0 20px;} .hero{padding:76px 0 56px;} }
+  .hero .eyebrow{color:var(--tan-deep);}
+  .hero .eyebrow::before{background:var(--tan-deep);}
+  .hero h1{
+    font-size:clamp(32px,5.2vw,60px);
+    line-height:1.08;
+    max-width:840px;
+    margin-top:20px;
+    text-transform:uppercase;
+    letter-spacing:0.005em;
+  }
+  .hero h1 .script{
+    display:block; font-size:1.5em; text-transform:none; color:var(--tan-deep); line-height:1;
+    margin-top:6px;
+  }
+  .hero p.lede{max-width:560px; margin-top:24px; font-size:17px; color:var(--ink-soft);}
+  .hero-ctas{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .hero-sub-links{display:flex; gap:28px; margin-top:28px; flex-wrap:wrap;}
+  .hero-sub-links a{font-size:13px; font-weight:700; color:var(--ink-soft); border-bottom:1px solid var(--line); padding-bottom:2px;}
+  .hero-sub-links a:hover{color:var(--ink); border-color:var(--ink);}
+
+  /* SECTION generic */
+  section{padding:96px 0;}
+  @media(max-width:640px){ section{padding:60px 0;} }
+  .section-head{max-width:680px; margin-bottom:48px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,40px); margin-top:14px; text-transform:uppercase;}
+  .section-head .tagline{font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:16px; margin-top:12px;}
+  .section-head p.desc{margin-top:16px; font-size:15.5px; opacity:0.85; max-width:560px;}
+
+  /* THREE DOORS */
+  .on-paper{background:var(--paper);}
+  .doors{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:22px;}
+  @media(max-width:900px){ .doors{grid-template-columns:1fr;} }
+  .door{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:34px 30px;
+    display:flex; flex-direction:column; gap:14px;
+    position:relative;
+    border-top:4px solid var(--tan-deep);
+  }
+  .door.d-institut{border-top-color:var(--taupe);}
+  .door.d-boutique{border-top-color:var(--sage-deep);}
+  .door .door-num{font-size:11.5px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-soft);}
+  .door h3{font-size:22px; margin-top:2px; text-transform:uppercase;}
+  .door p{font-size:14.5px; opacity:0.82; flex:1;}
+  .door .door-cta{font-size:12.5px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; margin-top:6px;}
+  .door .door-cta svg{width:14px;height:14px;}
+  .door.featured .door-cta{color:var(--tan-deep);}
+  .door.d-institut .door-cta{color:var(--taupe);}
+  .door.d-boutique .door-cta{color:var(--sage-deep);}
+  .tag-priority{
+    position:absolute; top:-11px; right:26px;
+    background:var(--tan-deep); color:var(--paper);
+    font-size:10px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase;
+    padding:5px 10px;
+  }
+
+  /* FORMATION SECTION (tan theme) */
+  .sec-formations{background:var(--cream-deep);}
+  .sec-formations .eyebrow, .sec-formations .eyebrow::before{color:var(--tan-deep); background:var(--tan-deep);}
+  .formation-grid{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start;}
+  @media(max-width:860px){ .formation-grid{grid-template-columns:1fr; gap:36px;} }
+  .why-list{list-style:none; margin:26px 0 0; padding:0; display:flex; flex-direction:column; gap:16px;}
+  .why-list li{display:flex; gap:16px; align-items:flex-start; font-size:15px;}
+  .why-list .ico{flex:none; width:34px; height:34px; border-radius:50%; background:var(--tan); display:flex; align-items:center; justify-content:center;}
+  .why-list .ico svg{width:17px;height:17px;}
+  .why-list .lbl{font-weight:700; text-transform:uppercase; font-size:13px; letter-spacing:0.03em; padding-top:6px;}
+
+  .stat-cards{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .stat-card{border:1px solid var(--line); background:var(--paper); padding:22px 20px;}
+  .stat-card .k{font-family:'Playfair Display',serif; font-weight:700; font-size:17px; color:var(--tan-deep); text-transform:uppercase;}
+  .stat-card .d{font-size:12.5px; margin-top:8px; color:var(--ink-soft); line-height:1.5;}
+
+  .catalog{margin-top:64px;}
+  .catalog-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:30px;}
+  @media(max-width:760px){ .catalog-grid{grid-template-columns:1fr;} }
+  .course-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-left:3px solid var(--tan-deep);
+    padding:28px;
+    display:flex; flex-direction:column; gap:12px;
+  }
+  .course-card h4{font-size:19px; text-transform:none;}
+  .course-meta{display:flex; gap:10px; flex-wrap:wrap; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:var(--tan-deep); font-weight:700;}
+  .course-meta span{border:1px solid var(--line); padding:4px 9px;}
+  .course-card p{font-size:14px; color:var(--ink-soft); margin:0;}
+  .course-price{font-family:'Playfair Display',serif; font-weight:700; font-size:17px; margin-top:auto; padding-top:10px; border-top:1px solid var(--line);}
+  .course-price .note{display:block; font-family:'Inter',sans-serif; font-size:11px; color:var(--ink-soft); margin-top:3px; font-weight:400; text-transform:none;}
+
+  .financing-band{
+    margin-top:56px; padding:26px 30px; border:1px solid var(--line); background:var(--paper);
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+  }
+  .financing-band .fin-left{display:flex; gap:22px; flex-wrap:wrap; font-size:12px; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; color:var(--tan-deep);}
+  .financing-band .fin-note{font-size:13px; color:var(--ink-soft); max-width:420px;}
+
+  /* Formation catalog: technique tags accordion */
+  .tech-tags{list-style:none; display:flex; flex-wrap:wrap; gap:9px; padding:2px 2px 22px; margin:0;}
+  .tech-tags li{border:1px solid var(--line); padding:8px 15px; font-size:13px; background:var(--cream);}
+
+  /* Payment terms */
+  .payment-steps{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:18px;}
+  @media(max-width:700px){ .payment-steps{grid-template-columns:1fr;} }
+  .payment-steps .pstep{border:1px solid var(--line); padding:18px 20px; background:var(--cream);}
+  .payment-steps .pstep .pn{font-family:'Playfair Display',serif; font-weight:700; font-size:16px; color:var(--tan-deep);}
+  .payment-steps .pstep .pd{font-size:12.5px; margin-top:6px; color:var(--ink-soft);}
+  .deposit-note{margin-top:18px; font-size:13px; color:var(--ink-soft); border-top:1px solid var(--line); padding-top:16px;}
+
+  /* Deroulement (theorique / pratique) */
+  .process-block{margin-top:70px;}
+  .process-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;}
+  @media(max-width:800px){ .process-grid{grid-template-columns:1fr;} }
+  .process-card{background:var(--paper); border:1px solid var(--line); padding:30px 28px;}
+  .process-card .pc-num{font-family:'Playfair Display',serif; font-weight:700; font-size:14px; color:var(--tan-deep);}
+  .process-card h4{font-size:19px; margin-top:6px; text-transform:uppercase;}
+  .process-card ul{list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .process-card li{font-size:13.5px; padding-left:18px; position:relative;}
+  .process-card li::before{content:'—'; position:absolute; left:0; color:var(--tan-deep);}
+  .process-note{
+    margin-top:24px; padding:20px 24px; background:var(--taupe-deep); color:var(--paper);
+    display:flex; align-items:center; gap:16px; flex-wrap:wrap; justify-content:space-between; font-size:13.5px;
+  }
+  .process-note strong{color:var(--tan);}
+
+  /* LEAD FORM */
+  .lead-block{margin-top:80px; background:var(--taupe-deep); color:var(--paper); padding:50px 44px;}
+  @media(max-width:640px){ .lead-block{padding:34px 24px;} }
+  .lead-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  @media(max-width:800px){ .lead-grid{grid-template-columns:1fr;} }
+  .lead-grid h3{font-size:25px; text-transform:uppercase;}
+  .lead-grid p{margin-top:14px; font-size:14.5px; opacity:0.85; max-width:400px;}
+  .lead-grid .eyebrow{color:var(--tan);}
+  .lead-grid .eyebrow::before{background:var(--tan);}
+  form.lead-form{display:flex; flex-direction:column; gap:14px;}
+  .field-row{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  @media(max-width:480px){ .field-row{grid-template-columns:1fr;} }
+  form.lead-form label{font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; margin-bottom:6px; display:block; opacity:0.8;}
+  form.lead-form input, form.lead-form select, form.lead-form textarea{
+    width:100%; padding:12px 13px; border:1px solid var(--line-on-dark); background:rgba(251,247,239,0.06);
+    font-family:'Inter',sans-serif; font-size:14px; color:var(--paper); border-radius:1px;
+  }
+  form.lead-form input::placeholder, form.lead-form textarea::placeholder{color:rgba(251,247,239,0.4);}
+  form.lead-form select option{color:#000;}
+  form.lead-form input:focus, form.lead-form select:focus, form.lead-form textarea:focus{
+    outline:2px solid var(--tan); outline-offset:1px;
+  }
+  form.lead-form textarea{min-height:90px; resize:vertical;}
+  form.lead-form .btn{margin-top:6px; align-self:flex-start;}
+  .form-note{font-size:11.5px; opacity:0.6; margin-top:10px;}
+
+  /* INSTITUT (taupe theme) */
+  .sec-institut{background:var(--cream);}
+  .sec-institut .eyebrow, .sec-institut .eyebrow::before{color:var(--taupe); background:var(--taupe);}
+  .services-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:20px;}
+  @media(max-width:980px){ .services-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:560px){ .services-grid{grid-template-columns:1fr;} }
+  .service-card{background:var(--paper); border:1px solid var(--line); border-top:3px solid var(--taupe); padding:26px 22px;}
+  .service-card h4{font-size:16px; text-transform:uppercase;}
+  .service-card ul{list-style:none; margin:16px 0 0; padding:0; display:flex; flex-direction:column; gap:9px;}
+  .service-card li{display:flex; justify-content:space-between; font-size:13px; gap:10px;}
+  .service-card li .p{color:var(--taupe); font-weight:700; white-space:nowrap;}
+  .service-card li .l{opacity:0.85;}
+  .institut-cta-row{display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:36px; flex-wrap:wrap;}
+  .institut-cta-row p{font-size:13.5px; opacity:0.7;}
+
+  /* FULL PRICE ACCORDION */
+  .price-block{margin-top:56px; background:var(--paper); border:1px solid var(--line); padding:38px 40px;}
+  @media(max-width:640px){ .price-block{padding:26px 22px;} }
+  .price-block-head{display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:6px;}
+  .price-block-head h3{font-size:22px; text-transform:uppercase;}
+  .price-block-head .hint{font-size:12.5px; color:var(--ink-soft);}
+  .price-accordion{margin-top:18px; border-top:1px solid var(--line);}
+  .price-cat{border-bottom:1px solid var(--line);}
+  .price-cat summary{
+    list-style:none; cursor:pointer; padding:18px 2px;
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    font-family:'Playfair Display',serif; font-weight:700; font-size:16px; text-transform:uppercase;
+  }
+  .price-cat summary::-webkit-details-marker{display:none;}
+  .price-cat summary .sum-left{display:flex; align-items:center; gap:12px;}
+  .price-cat summary .count{
+    font-family:'Inter',sans-serif; font-weight:600; font-size:11px; text-transform:none; letter-spacing:0;
+    color:var(--taupe); border:1px solid var(--line); padding:3px 10px; border-radius:20px;
+  }
+  .price-cat summary .toggle-ico{font-family:'Inter',sans-serif; font-weight:400; font-size:22px; color:var(--taupe); line-height:1;}
+  .price-cat[open] summary .toggle-ico{transform:rotate(45deg); display:inline-block;}
+  .price-list{list-style:none; margin:0; padding:2px 2px 22px; display:flex; flex-direction:column; gap:10px;}
+  .price-list li{display:flex; justify-content:space-between; gap:14px; font-size:14px; border-bottom:1px dashed var(--line); padding-bottom:8px;}
+  .price-list li .p{font-weight:700; color:var(--taupe); white-space:nowrap;}
+  .price-list li.sub{padding-left:18px; opacity:0.75; font-size:12.5px;}
+  .price-list li.sub .l::before{content:'↳ '; opacity:0.6;}
+  .partners-note{margin-top:22px; font-size:13px; color:var(--ink-soft);}
+  .gift-row{display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:22px; padding-top:22px; border-top:1px solid var(--line); flex-wrap:wrap;}
+  .gift-row p{font-size:13.5px; max-width:420px;}
+
+  .discover-strip{margin-top:70px; display:grid; grid-template-columns:1.1fr 1fr; gap:0; border:1px solid var(--line);}
+  @media(max-width:820px){ .discover-strip{grid-template-columns:1fr;} }
+  .discover-copy{padding:46px 44px; background:var(--taupe-deep); color:var(--paper);}
+  @media(max-width:640px){ .discover-copy{padding:32px 26px;} }
+  .discover-copy .eyebrow{color:var(--tan); margin-bottom:14px;}
+  .discover-copy .eyebrow::before{background:var(--tan);}
+  .discover-copy h3{font-size:25px; text-transform:uppercase;}
+  .discover-copy p{margin-top:14px; font-size:14.5px; opacity:0.85;}
+  .discover-copy .btn{margin-top:22px;}
+  .discover-map{min-height:280px;}
+  .discover-map iframe{width:100%; height:100%; min-height:280px; border:0; display:block; filter:sepia(0.15) saturate(0.85);}
+
+  .why-row{display:flex; gap:34px; flex-wrap:wrap; margin-top:8px;}
+  .why-row .item{display:flex; align-items:center; gap:12px; font-size:13.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.02em;}
+  .why-row .item .ico2{width:38px;height:38px;border-radius:50%; display:flex; align-items:center; justify-content:center; flex:none;}
+  .why-row .item svg{width:18px;height:18px;}
+
+  /* BOUTIQUE (sage theme) */
+  .sec-boutique{background:var(--cream-deep);}
+  .sec-boutique .eyebrow, .sec-boutique .eyebrow::before{color:var(--sage-deep); background:var(--sage-deep);}
+  .boutique-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:36px;}
+  @media(max-width:820px){ .boutique-grid{grid-template-columns:1fr;} }
+  .boutique-card{border:1px solid var(--line); background:var(--paper); padding:0; overflow:hidden;}
+  .boutique-visual{height:150px; display:flex; align-items:center; justify-content:center; background:var(--sage);}
+  .boutique-body{padding:24px 22px;}
+  .boutique-body h4{font-size:16px; text-transform:uppercase;}
+  .boutique-body p{font-size:13.5px; opacity:0.78; margin-top:10px;}
+  .boutique-body .btn-ghost{margin-top:14px; font-size:13px; padding:0 0 3px;}
+  .boutique-note{margin-top:30px; font-size:13px; opacity:0.65; max-width:560px;}
+
+  /* BAIJA product ranges */
+  .baija-intro{display:flex; align-items:center; gap:14px; margin:8px 0 34px; flex-wrap:wrap;}
+  .baija-intro img{height:26px; opacity:0.85;}
+  .baija-intro span{font-size:12.5px; color:var(--ink-soft);}
+
+  .range-tabs{display:flex; gap:10px; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:0;}
+  .range-tabs input{position:absolute; opacity:0; pointer-events:none;}
+  .range-tabs label{
+    cursor:pointer; padding:11px 18px; font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em;
+    border:1px solid var(--line); border-bottom:none; background:var(--paper); color:var(--ink-soft);
+    display:flex; align-items:center; gap:8px; transition:background .2s ease, color .2s ease;
+  }
+  .range-tabs label .rd{width:8px; height:8px; border-radius:50%; flex:none;}
+  .rd-moana{background:#3E8E90;} .rd-lost{background:#D69A2D;} .rd-minuit{background:#7B5EA7;} .rd-sweet{background:#C97B5A;}
+
+  #tab-moana:checked ~ .range-tabs label[for="tab-moana"],
+  #tab-lost:checked ~ .range-tabs label[for="tab-lost"],
+  #tab-minuit:checked ~ .range-tabs label[for="tab-minuit"],
+  #tab-sweet:checked ~ .range-tabs label[for="tab-sweet"]{
+    background:var(--ink); color:var(--paper);
+  }
+
+  .range-panel{display:none; padding-top:32px;}
+  #tab-moana:checked ~ .panels #panel-moana,
+  #tab-lost:checked ~ .panels #panel-lost,
+  #tab-minuit:checked ~ .panels #panel-minuit,
+  #tab-sweet:checked ~ .panels #panel-sweet{display:block;}
+
+  .range-head{display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; margin-bottom:22px;}
+  .range-head h3{font-size:22px; text-transform:uppercase;}
+  .range-head p{font-size:13.5px; color:var(--ink-soft); max-width:480px; margin-top:6px;}
+  .range-head .rn{font-family:'Playfair Display',serif; font-style:italic; font-weight:500; font-size:14px;}
+
+  .product-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
+  @media(max-width:820px){ .product-grid{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:540px){ .product-grid{grid-template-columns:1fr;} }
+  .product-card{background:var(--paper); border:1px solid var(--line); padding:18px 18px 16px; display:flex; flex-direction:column; gap:10px;}
+  .product-card .pname{font-size:14px; font-weight:700; line-height:1.3;}
+  .product-card .psize{font-size:11.5px; color:var(--ink-soft);}
+  .product-card .pbottom{display:flex; align-items:center; justify-content:space-between; margin-top:auto; padding-top:8px;}
+  .product-card .pprice{font-family:'Playfair Display',serif; font-weight:700; font-size:16px;}
+  .product-card .padd{
+    border:1px solid var(--ink); background:none; padding:7px 13px; font-size:11.5px; font-weight:700; text-transform:uppercase;
+    cursor:pointer; letter-spacing:0.03em; transition:background .2s ease, color .2s ease;
+  }
+  .product-card .padd:hover{background:var(--ink); color:var(--paper);}
+  .product-card .padd.added{background:var(--sage-deep); color:var(--paper); border-color:var(--sage-deep);}
+
+  .cart-bar{
+    position:sticky; bottom:0; margin-top:36px; background:var(--ink); color:var(--paper);
+    padding:16px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+    border:1px solid var(--line-on-dark);
+  }
+  .cart-bar .ci{font-size:13.5px;}
+  .cart-bar .ci strong{color:var(--tan);}
+  .cart-bar .btn{padding:11px 20px; font-size:12.5px;}
+  .cart-note{font-size:12px; opacity:0.65; margin-top:14px; max-width:600px;}
+
+  /* TESTIMONIALS */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:10px;}
+  @media(max-width:820px){ .testi-grid{grid-template-columns:1fr;} }
+  .testi-card .quote-mark{font-family:'Playfair Display',serif; font-style:italic; font-size:44px; color:var(--tan-deep); line-height:1;}
+  .testi-card p.quote{font-size:15.5px; margin-top:6px; line-height:1.55;}
+  .testi-card .who{margin-top:16px; font-size:12.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase; color:var(--ink-soft);}
+
+  /* CONTACT / FOOTER */
+  footer{background:var(--ink); color:var(--paper); padding:80px 0 0;}
+  .footer-grid{display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:50px; padding-bottom:60px; border-bottom:1px solid var(--line-on-dark);}
+  @media(max-width:820px){ .footer-grid{grid-template-columns:1fr; gap:36px;} }
+  .footer-grid h4{font-size:11.5px; text-transform:uppercase; letter-spacing:0.1em; color:var(--tan); margin-bottom:18px; font-family:'Inter',sans-serif; font-weight:700;}
+  .footer-brand p{margin-top:18px; font-size:14px; color:rgba(251,247,239,0.68); max-width:320px;}
+  .footer-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:11px; font-size:14px; color:rgba(251,247,239,0.82);}
+  .footer-list a:hover{color:var(--tan);}
+  .social-row{display:flex; gap:14px; margin-top:20px;}
+  .social-row a{width:34px; height:34px; border:1px solid var(--line-on-dark); display:flex; align-items:center; justify-content:center; border-radius:50%;}
+  .social-row a:hover{border-color:var(--tan);}
+  .social-row svg{width:15px;height:15px;}
+  .hours-table{font-size:14px; color:rgba(251,247,239,0.82); display:flex; flex-direction:column; gap:8px;}
+  .hours-table .row{display:flex; justify-content:space-between; gap:14px; border-bottom:1px dashed var(--line-on-dark); padding-bottom:6px;}
+  .bottom-bar{
+    max-width:var(--max); margin:0 auto; padding:22px 32px 30px;
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;
+    font-size:12px; color:rgba(251,247,239,0.5);
+  }
+  .bottom-bar a{color:rgba(251,247,239,0.6);}
+  .bottom-bar a:hover{color:var(--tan);}
+
+  .skip-link{position:absolute; left:-999px; top:0; background:var(--tan-deep); color:var(--paper); padding:10px 16px; z-index:999;}
+  .skip-link:focus{left:10px; top:10px;}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu</a>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand"><img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAAJcEhZcwAADsQAAA7EAZUrDhsAAASGaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pgo8eDp4bXBtZXRhIHhtbG5zOng9J2Fkb2JlOm5zOm1ldGEvJz4KPHJkZjpSREYgeG1sbnM6cmRmPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjJz4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0nJwogIHhtbG5zOkF0dHJpYj0naHR0cDovL25zLmF0dHJpYnV0aW9uLmNvbS9hZHMvMS4wLyc+CiAgPEF0dHJpYjpBZHM+CiAgIDxyZGY6U2VxPgogICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSdSZXNvdXJjZSc+CiAgICAgPEF0dHJpYjpDcmVhdGVkPjIwMjMtMTAtMzA8L0F0dHJpYjpDcmVhdGVkPgogICAgIDxBdHRyaWI6RXh0SWQ+NjhjYTlhYzItMjg3Zi00ZjUyLWIwNDctNzJkZGVlNzQ0MDBhPC9BdHRyaWI6RXh0SWQ+CiAgICAgPEF0dHJpYjpGYklkPjUyNTI2NTkxNDE3OTU4MDwvQXR0cmliOkZiSWQ+CiAgICAgPEF0dHJpYjpUb3VjaFR5cGU+MjwvQXR0cmliOlRvdWNoVHlwZT4KICAgIDwvcmRmOmxpPgogICA8L3JkZjpTZXE+CiAgPC9BdHRyaWI6QWRzPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpkYz0naHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8nPgogIDxkYzp0aXRsZT4KICAgPHJkZjpBbHQ+CiAgICA8cmRmOmxpIHhtbDpsYW5nPSd4LWRlZmF1bHQnPkJsYWNrICZhbXA7IFdoaXRlIFNpbXBsZSAgQ2lyY2xlIExvZ28gLSAxMjwvcmRmOmxpPgogICA8L3JkZjpBbHQ+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mmtq9dVXr7q9Rl5TPf5fnn76aT3xxBPaZJNNil7fY489pmeffVabbbaZVl555V7be/nll3X//feXfc7YsWO1xRZbVBRfz7/HhhtuqLvuumvx91tssYXGjh1bUVtYSrj759M03aPZcdRbjDGNfbT11ltHSXHcuHExl8sVfc4pp5wSJUVJ8eGHH67pPJ2dnXG99daLkuKECRNqjjefz0dJcZVVVqn62J/+9Kdx5MiRi69FUmxra4t77rlnfP7556tqa/78+fGwww6LQ4cOfV97ZhYPPvjgOGfOnKrjO/bYY6OkuPrqq8c333xzice//vWvR0nx+uuvr7rtanW9Lnp+JUkSd9ppp5peB13XV+rrW9/6VgOu5P1KXZek+PGPfzy+8MILVbXXqGuq1//L8ccfHyXFs88+u+jj3/rWt6Kk+Kc//ami9i666KKy1ysp7rHHHhXHV+7vISleddVVFbdVQlq/d9yBIU3Tvcxs82bGQA99gHv++ed14YUX6uCDD37fz999911NnTq1z+3PmDFDM2fO1JAhQ/Tvf/9bt99+u7bZZps+t1upiy66SD/60Y80atQoHXXUUVp55ZX19NNP66qrrtINN9ygIUOGVNzW3Llzte222+qRRx7R6quvri9+8YsaN26cXn75ZV188cU677zzdOutt+q2227TSiutVHWsL7zwgr785S/r6quvrvrYevvpT3+6+G7AnDlzNGPGDP3tb3/TxIkTNWPGDG277bZVt3nggQdq6623XuLnm2yySZ/jrdSJJ564+LrmzZun888/XzfffLO+/vWva8aMGVW3V+9ravb/SylbbbWVzj777MXfn3LKKXruued00kknadlll5UkrbHGGlW32/111t2mm25ae7BoTfTQe/+EPGLEiDh+/PiYz+ff9/jUqVOjpMU921p76DvuuGMMIcQ//vGPUVLcZ599amqn1h76gQceGCXFo446aon2brvttqra2meffaKkuOeee8YFCxa877FFixbFSZMmLe7xVaOrt5ckSZQUf/nLX77v8Wb00J966qklHjvjjDOipDh27Ng4f/78itvsur7f//739Qy1KqWu64UXXoiS4korrVRVe426pnr9v9S7h97TVlttFSXFF198sabjy73O6oQeegMwKW6Amzx5sp577jlddNFFi3+2cOFCnXrqqRo7dqz23nvvmtt++OGHddNNN+nTn/60vvCFL2ijjTbS9OnTNWvWrHqEXpGuT//XXnvt+8Y8QwhV9XyeeeYZXXHFFRo7dqymTZum4cOHv+9xd9cFF1yg8ePH6+abb9Y999xTdaxTpkzRkCFDdNRRR+nuu++u+vhG+8Y3vqH99ttPr732mqZNm9bscOrilVdekdS/dwlKGQj/L0A53HIf4L7zne/onHPO0QknnKCDDjpIIQT99re/1WuvvaZTTz1VzzzzTM1tn3baaZIKiUCSDjvsME2ePFlnnnlmXW7nV2LKlCk6//zz9eijj2qDDTbQLrvsor333luTJk3SiBEjKm7n9ttvlyTttddeGjlyZNHnuLs+97nP6eSTT9Ztt91W8QShLptuuql+8Ytf6LDDDtN+++2n+++/f/HtzIFi0qRJuuyyy/Svf/1LhxxySFXHXnnllXr66aff97NRo0bp2GOPrWeIZR111FGLJy/OmzdPN9xwgzbddFP95je/qam9el7TQPh/6W9Tp05d4jX+4Q9/WJMmTWpSRCin6Qm9ra3t521tbUc2O456GjZsmBYuXFiXtsaMGaMpU6bo5JNP1iWXXKL99ttPp5xyij7wgQ9o8uTJOuKII2pq9/XXX9e0adP0oQ99SNttt50k6aCDDtLRRx+tc889Vz/+8Y9LJsZ6WnvttfXggw/qtNNO07Rp03T99dfr+uuv1+GHH66f//znmjx5ckXtzJs3T5J6nend9fjbb79dU7yHHnqo/v73v+uKK67QwQcfrCuuuKKmdhql+/hztbp+992NHTu2XxP6lVdeucTPhg8frrlz59bUXr2uaaD8v/S3c845Z4mf7bfffn1O6MOGDbvJzPrUxgD0AUlfamYATU3ouVzuz5KmNzOGRthtt93aJC2oV3uHH364fv3rX+uEE07Q7Nmz9Z///EcnnniiRowYoSRJamrzrLPO0qJFi7TNNtvolltuWfzzrbfeWjNmzNAFF1ygww47rE5XUN7qq6+u0047TVOnTtUdd9yh008/XVdeeaWmTJmiTTbZpOikpp5WWaWw/fwTTzxR9nkzZ86UJK266qo1x3veeefpvvvu05VXXqkzzzyz5nYaoeuOTSVLnXr6yU9+ssQQTn+/6d53330aP368JGn+/Pn661//qm9+85vadddd9fTTT2vMmDFVtVeva6r3/0tXDKU++Hf9vNlJb8aMGVpttdXe97N63JXaeeedP/GXv/yls88NDTy5ZgeAOot1nBS3cOHCGGOMhx9++OLlV8stt1ycN29ejDHGyZMnVz0p7r333osrrrhi2WUp66yzTuzs7Ky4zVonxZValrbXXntFSfG4446rqJ25c+fG4cOHR3ePjz32WNHnzJo1K44cOTKGEKpaBlVsgtVdd90VzSwOGTIkTpw4cUBMimtvb49bbrlllBSvu+66itscyJPiYoxx//33j5Li9OnTK26vntfUiP+Xiy++OEqKBx10UNHHu/6Od911V00xMylu6dT0W+6ozBFHHKGzzjpLCxcu1Le//e3F44y19NAvueQSvf7669pjjz20/fbbL/H45ZdfrrvuukvXXXedPvnJT/Y19JIWLlyoiRMnapdddtFPfvITjRs3TpK0aNGixZOhRo8eXVFbyy67rI455hj94Ac/0O67767LL79cm2/+3wmnTzzxhPbee2+98847Ovzww5fodVRryy231EknnaQjjjhCd955Z5/aqoc5c+Zo8uTJuvvuu/U///M/2n333ZsdUl28/fbbuvfeeyUVJko2QyP+X3bZZRcNGzZM06ZN06RJk9739zr77LN19913a7XVVtNmm21Wr8vAUoCEPkistNJKOvLII3Xttdfqm9/8Zp/aOv3005UkiU4//XStvfbaSzy+8cYba7fddtPpp5/e0IT+5ptvavTo0brwwgt14YUXaoMNNtDyyy+vxx9/XG+++abGjh2rAw44oOL2jjnmGL344os655xztOWWW2rixIkaP368Xn75Zd1+++3q6OjQ/vvvr5NPPrku8X/3u9/VLbfcomuvvbYu7VXjkEMOWTyTf968ebr33nu1cOFCbbbZZrr88str+qB35plnavr0JUfANt54Y5100kl9jrkSkydPXjwZcsGCBbrnnnv09ttva911162pAmE9rqkR/y8rrLCCTj31VB122GH6xCc+oS233FJrrLGGZs6cqYceekghBJ199tlN+xDTpfvrrLv9999f+++/fxMiAvpZbMAt91IOPfTQqm6533jjjVFS3H333Us+p7OzM6677rpVtVvrLfeFCxfGX/3qV3GLLbaIIYTF66i/9rWvxVmzZlXVVperr7467rDDDtHdo6QYQohbb711vPTSS2tqr9zt29mzZ8dVV121qZXiRo0aFSdOnBh/9atfxffee6/qNnurqrbddtvV/0J6KHZdQ4cOjeuss048/PDD4+uvv15Ve/W6pkb9v3S55ppr4kc/+tGYpmmUFIcMGRJ32WWXeMcdd1TVTk/1uuVe6qvSobAyuOXeALXNqEJZ2Yu1vdlxDDYxRuVyuaqqw/XW3vz58zVy5Ei1tVFyAQNXe3u7FixYoFGjRi0tr9WQJElHs4NoNST0BiChA0BZJPQGWCo+CgIA0OpI6AAAtAASOgAALYCEDgBACyChAwDQAkjoAAC0ABI6AAAtgIQOAEALoJZ7Y3RKOqrZQQDAANWKW6cCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC++P911d56akYA3AAAAABJRU5ErkJggg==" alt="Nina - Maison de Beauté"></a>
+    <nav class="primary" aria-label="Navigation principale">
+      <a class="nav-link" href="#formations"><span class="dot dot-tan"></span>Formations Pro</a>
+      <a class="nav-link" href="#institut"><span class="dot dot-taupe"></span>Institut</a>
+      <a class="nav-link" href="#boutique"><span class="dot dot-sage"></span>Boutique</a>
+      <a class="nav-link" href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="nav-tel" href="tel:0955426199">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        09 55 42 61 99
+      </a>
+      <a href="#formations-catalogue" class="btn btn-tan">Voir les formations</a>
+      <button class="burger" aria-label="Ouvrir le menu" aria-expanded="false" id="burgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#formations">Formations Pro</a>
+    <a href="#institut">Institut & Soins</a>
+    <a href="#boutique">Boutique</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:0955426199">09 55 42 61 99</a>
+    <a href="#formations-catalogue" class="btn btn-tan">Voir les formations</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-art" viewBox="0 0 1400 700" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <g stroke="#C7A574" stroke-opacity="0.55" stroke-width="1.1" fill="none">
+      <path d="M120 700 V520 A70 70 0 0 1 260 520 V700"/>
+      <path d="M260 700 V520 A70 70 0 0 1 400 520 V700"/>
+      <path d="M960 700 V500 A90 90 0 0 1 1140 500 V700"/>
+      <path d="M1140 700 V500 A90 90 0 0 1 1320 500 V700"/>
+    </g>
+    <circle cx="1080" cy="150" r="130" fill="none" stroke="#8A6F4E" stroke-opacity="0.3" stroke-width="1"/>
+    <path d="M120 230 C 180 190, 220 190, 260 150 C 300 190, 340 190, 400 230" stroke="#93A87E" stroke-opacity="0.45" stroke-width="1" fill="none"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">Nina — Maison de Beauté · Crémieu, cœur de la cité médiévale</div>
+    <h1>L'art du soin, transmis<span class="script">par celles qui le pratiquent chaque jour</span></h1>
+    <p class="lede">Institut de beauté et centre de formation à Crémieu : nous accompagnons les particulières en quête de bien-être et les professionnelles de l'esthétique qui veulent monter en compétence, dans un cadre réel — pas seulement en salle de classe.</p>
+    <div class="hero-ctas">
+      <a href="#formations" class="btn btn-tan">Découvrir nos formations professionnelles</a>
+      <a href="#institut" class="btn btn-outline-light">Réserver un soin découverte</a>
+    </div>
+    <div class="hero-sub-links">
+      <a href="#boutique">Voir la boutique de produits →</a>
+      <a href="#contact">Nous trouver à Crémieu →</a>
+    </div>
+  </div>
+</section>
+
+<!-- THREE DOORS -->
+<section class="on-paper" aria-labelledby="doors-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--ink-soft);"><span style="width:22px;height:1px;background:var(--ink-soft);display:inline-block;"></span>Trois façons de nous rencontrer</div>
+      <h2 id="doors-title">Une seule maison, trois portes d'entrée</h2>
+      <p class="desc">Formation, institut ou boutique : chaque activité a sa propre identité, mais toutes partagent le même savoir-faire.</p>
+    </div>
+    <div class="doors">
+      <div class="door featured">
+        <span class="tag-priority">Notre spécialité</span>
+        <div class="door-num">01 — Professionnelles</div>
+        <h3>Formations esthétique</h3>
+        <p>Perfectionnement, reconversion ou création d'institut : formez-vous aux techniques signature de Nina, en petit groupe, dans un institut qui fonctionne réellement au quotidien.</p>
+        <a class="door-cta" href="#formations">Voir le programme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="door d-institut">
+        <div class="door-num">02 — Particulières</div>
+        <h3>Institut de beauté</h3>
+        <p>Soins du visage, minceur, épilation, maquillage permanent, onglerie. Réservez un rendez-vous découverte pour un premier diagnostic personnalisé.</p>
+        <a class="door-cta" href="#institut">Prendre rendez-vous <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="door d-boutique">
+        <div class="door-num">03 — À emporter</div>
+        <h3>Produits &amp; conseils</h3>
+        <p>Les soins professionnels utilisés en cabine, à prolonger chez vous : une sélection resserrée, choisie avec soin par Nina.</p>
+        <a class="door-cta" href="#boutique">Découvrir la boutique <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS (tan theme, priority) -->
+<section class="sec-formations" id="formations" aria-labelledby="formations-title">
+  <div class="wrap">
+    <div class="eyebrow">Salle 01 · L'atelier formation</div>
+    <div class="formation-grid" style="margin-top:14px;">
+      <div>
+        <h2 id="formations-title" style="font-size:clamp(28px,3.8vw,44px);">Transforme ton potentiel en réussite</h2>
+        <p class="tagline" style="color:var(--tan-deep);">« Avec méthode tout s'accélère. »</p>
+        <p style="margin-top:18px; font-size:15.5px; color:var(--ink-soft); max-width:480px;">L'aventure a commencé en 2016, avec l'ouverture de mon premier espace dédié à la beauté. Au fil des années, ma passion pour l'esthétique et l'envie de transmettre n'ont cessé de grandir. Aujourd'hui, je propose des formations esthétiques au sein de mon institut, un lieu volontairement plus intimiste, pensé pour offrir un apprentissage de qualité, personnalisé et serein.</p>
+        <p style="margin-top:14px; font-size:15.5px; color:var(--ink-soft); max-width:480px;">Ici, chaque formation devient une expérience : un moment privilégié pour développer ton savoir-faire, gagner en confiance et transformer ta passion en compétence professionnelle.</p>
+        <ul class="why-list">
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#211C15" stroke-width="1.6"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></span>
+            <span><span class="lbl">L'esthétique, c'est du soin et de l'écoute</span><br><span style="font-size:14px;">Chaque compétence se développe pas à pas, avec précision et bienveillance.</span></span>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#211C15" stroke-width="1.6"><path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.3 4 2 .5-.7 2-2 4-2 4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/></svg></span>
+            <span><span class="lbl">Accompagnement personnalisé</span><br><span style="font-size:14px;">2 stagiaires maximum par session pour un suivi rapproché et des retours individualisés.</span></span>
+          </li>
+          <li>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#211C15" stroke-width="1.6"><path d="M12 2l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17l-5.9 3.2 1.2-6.6L2.5 9l6.6-.9L12 2z"/></svg></span>
+            <span><span class="lbl">Excellence &amp; transmission</span><br><span style="font-size:14px;">Les techniques enseignées sont celles utilisées en cabine, chaque jour.</span></span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <div class="stat-cards">
+          <div class="stat-card">
+            <div class="k">2 stagiaires max</div>
+            <div class="d">Par session, pour une attention optimale. Groupe plus large : nous contacter pour organiser une session adaptée.</div>
+          </div>
+          <div class="stat-card">
+            <div class="k">Théorique + pratique</div>
+            <div class="d">Chaque formation combine apprentissage des fondamentaux et mise en pratique encadrée.</div>
+          </div>
+          <div class="stat-card">
+            <div class="k">Paiement en 3 fois</div>
+            <div class="d">Sans frais supplémentaires, pour étaler le coût de la formation en douceur.</div>
+          </div>
+          <div class="stat-card">
+            <div class="k">Organisme déclaré</div>
+            <div class="d">Déclaration d'activité n°82&nbsp;38&nbsp;06224&nbsp;38 auprès du Préfet Rhône-Alpes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="catalog" id="formations-catalogue">
+      <div class="eyebrow">Catalogue</div>
+      <h3 style="font-size:25px; margin-top:14px; text-transform:uppercase;">Les formations</h3>
+      <p style="margin-top:10px; font-size:13.5px; color:var(--ink-soft); max-width:620px;">Toutes nos formations sont dispensées en individuel ou en tout petit groupe (2 personnes maximum), au sein de l'institut. Programme détaillé et tarif communiqués sur devis selon la ou les techniques choisies.</p>
+
+      <div class="price-accordion">
+
+        <details class="price-cat" open>
+          <summary><span class="sum-left">Minceur <span class="count">5 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Drainage esthétique</li><li>Maderothérapie</li><li>Jambes lourdes</li><li>Modelage amincissant</li><li>Slimfit</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Massages du monde <span class="count">16 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Californien</li><li>Abhyanga</li><li>Africain</li><li>Marocain</li><li>Singapourien</li><li>Pierres chaudes</li><li>Coquillages</li><li>Balinais</li><li>Lomi-Lomi</li><li>Suédois</li><li>Thaïlandais</li><li>Zanzibar</li><li>Coréen</li><li>Réflexologie plantaire</li><li>Massage femme enceinte</li><li>Babyrelax</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Massage visage <span class="count">6 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Modelage liftant japonais</li><li>Kobido</li><li>Shirotchampi</li><li>Drainage du visage</li><li>Maderothérapie visage</li><li>Kao Lift</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Soins du visage <span class="count">2 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Hydraskin</li><li>Peeling esthétique</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Beauté du regard <span class="count">6 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Restructuration de sourcils</li><li>Sourcils au henné</li><li>Extensions de cils</li><li>Volume russe</li><li>Rehaussement de cils</li><li>Brow lift</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Maquillage permanent <span class="count">7 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Dermopigmentation débutant</li><li>Powder brow</li><li>Velvet lips</li><li>Liner poudré</li><li>Microblading / Microshading</li><li>Colorimétrie &amp; rattrapage couleur</li><li>Mapping du sourcil / construction</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Onglerie <span class="count">7 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Ongles en gel</li><li>Perfectionnement gel</li><li>Porcelaine</li><li>Ongles américains</li><li>Acrygel</li><li>Manucure russe</li><li>Vernis semi-permanent renforcé</li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Épilations <span class="count">2 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="tech-tags">
+            <li>Épilation au fil</li><li>Épilation à la cire</li>
+          </ul>
+        </details>
+
+      </div>
+    </div>
+
+    <div class="process-block">
+      <div class="eyebrow">Le déroulé</div>
+      <h3 style="font-size:25px; margin-top:14px; text-transform:uppercase;">Déroulement d'une formation</h3>
+      <p style="margin-top:10px; font-size:13.5px; color:var(--ink-soft); max-width:620px;">Une pédagogie en deux temps, pensée pour que chaque geste soit compris avant d'être répété.</p>
+      <div class="process-grid">
+        <div class="process-card">
+          <div class="pc-num">01</div>
+          <h4>Partie théorique</h4>
+          <ul>
+            <li>Notions essentielles liées au thème de la formation</li>
+            <li>Bonnes pratiques à connaître</li>
+            <li>Règles de sécurité, d'hygiène et de mise en œuvre</li>
+            <li>Méthodologies et techniques professionnelles</li>
+            <li>Supports pédagogiques remis pour la compréhension</li>
+          </ul>
+        </div>
+        <div class="process-card">
+          <div class="pc-num">02</div>
+          <h4>Partie pratique</h4>
+          <ul>
+            <li>Exercices et démonstrations</li>
+            <li>Manipulations encadrées</li>
+            <li>Réalisation d'exemples concrets</li>
+            <li>Corrections, ajustements et conseils personnalisés</li>
+            <li>Suivi individuel et accompagnement pas à pas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="process-note">
+        <span>Grâce au nombre limité de participants, chaque apprenant bénéficie d'un <strong>suivi rapproché</strong>, de <strong>retours personnalisés</strong> et d'une <strong>progression adaptée</strong> à son niveau.</span>
+      </div>
+    </div>
+
+    <div class="catalog" style="margin-top:70px;">
+      <div class="eyebrow">Financement</div>
+      <h3 style="font-size:25px; margin-top:14px; text-transform:uppercase;">Financement personnel</h3>
+      <p style="margin-top:10px; font-size:13.5px; color:var(--ink-soft); max-width:620px;">Afin de rendre la formation plus accessible, plusieurs modalités de règlement sont proposées, sans aucun frais supplémentaire.</p>
+      <div class="payment-steps">
+        <div class="pstep"><div class="pn">En 1 fois</div><div class="pd">Réglé au moment de l'inscription.</div></div>
+        <div class="pstep"><div class="pn">En 2 fois</div><div class="pd">Sans frais supplémentaires.</div></div>
+        <div class="pstep"><div class="pn">En 3 fois</div><div class="pd">Sans frais, pour étaler le coût en douceur.</div></div>
+      </div>
+      <p class="deposit-note">Dans tous les cas, un acompte de <strong>30 %</strong> est demandé au moment de l'inscription ; le solde est ensuite réparti selon l'échéancier choisi. Formations en paiement personnel — non éligibles aux dispositifs CPF / OPCO / FAFCEA, la certification Qualiopi n'ayant pas encore été obtenue.</p>
+    </div>
+
+    <div class="lead-block">
+      <div class="lead-grid">
+        <div>
+          <div class="eyebrow">Prochaine étape</div>
+          <h3 style="margin-top:14px;">Demandez le programme complet</h3>
+          <p>Dites-nous quelle(s) technique(s) t'intéresse(nt) : nous t'envoyons le programme détaillé, les dates disponibles et le tarif sous 48h.</p>
+          <p style="margin-top:22px; font-size:13.5px;">Tu préfères en parler directement ?<br><a href="tel:0763329370" style="font-weight:700; color:var(--tan);">07 63 32 93 70</a></p>
+        </div>
+        <form class="lead-form" id="formationForm">
+          <div class="field-row">
+            <div><label for="f-nom">Nom</label><input type="text" id="f-nom" name="nom" required></div>
+            <div><label for="f-tel">Téléphone</label><input type="tel" id="f-tel" name="telephone" required></div>
+          </div>
+          <div><label for="f-email">E-mail</label><input type="email" id="f-email" name="email" required></div>
+          <div>
+            <label for="f-formation">Technique(s) qui t'intéresse(nt)</label>
+            <select id="f-formation" name="formation">
+              <option>Minceur</option>
+              <option>Massages du monde</option>
+              <option>Massage visage</option>
+              <option>Soins du visage</option>
+              <option>Beauté du regard</option>
+              <option>Maquillage permanent</option>
+              <option>Onglerie</option>
+              <option>Épilations</option>
+              <option>Je ne sais pas encore, conseillez-moi</option>
+            </select>
+          </div>
+          <div><label for="f-message">Ton message (optionnel)</label><textarea id="f-message" name="message" placeholder="Ta situation, ton projet, tes disponibilités..."></textarea></div>
+          <button type="submit" class="btn btn-tan">Recevoir le programme</button>
+          <p class="form-note">En envoyant ce formulaire, ta messagerie s'ouvre pré-remplie vers ninamaisondebeaute@gmail.com.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUT (taupe theme) -->
+<section class="sec-institut" id="institut" aria-labelledby="institut-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Salle 02 · L'institut</div>
+      <h2 id="institut-title">Institut de beauté</h2>
+      <p class="tagline" style="color:var(--taupe);">« Prenez soin de vous, vous le méritez. »</p>
+      <p class="desc">Diagnostic personnalisé, conseils adaptés à votre peau et à vos objectifs : le rendez-vous découverte est la meilleure porte d'entrée pour rencontrer l'équipe et définir votre rituel beauté.</p>
+    </div>
+
+    <div class="why-row" style="margin-bottom:44px;">
+      <div class="item">
+        <span class="ico2" style="background:var(--taupe);"><svg viewBox="0 0 24 24" fill="none" stroke="#211C15" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 10h.01M15 10h.01M8 15c1 1.2 2.4 2 4 2s3-.8 4-2"/></svg></span>
+        Soins visage &amp; corps
+      </div>
+      <div class="item">
+        <span class="ico2" style="background:var(--taupe);"><svg viewBox="0 0 24 24" fill="none" stroke="#211C15" stroke-width="1.6"><path d="M7 11a5 5 0 0 1 10 0v3a5 5 0 0 1-10 0z"/><path d="M9 9c1-1 5-1 6 0"/></svg></span>
+        Massages bien-être
+      </div>
+      <div class="item">
+        <span class="ico2" style="background:var(--taupe);"><svg viewBox="0 0 24 24" fill="none" stroke="#211C15" stroke-width="1.6"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        Regard &amp; beauté
+      </div>
+    </div>
+
+    <div class="institut-cta-row" style="margin-top:0;">
+      <p>Créneaux disponibles en temps réel sur notre agenda en ligne.</p>
+      <a href="https://www.planity.com/nina-maison-de-beaute-38460-cremieu" target="_blank" rel="noopener" class="btn btn-outline-light">Réserver sur Planity</a>
+    </div>
+
+    <div class="price-block">
+      <div class="price-block-head">
+        <h3>La carte des prestations</h3>
+        <span class="hint">Cliquez une catégorie pour dérouler le détail</span>
+      </div>
+
+      <div class="price-accordion">
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Soins du visage <span class="count">12 soins</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Diagnostique de peau — 20 min</span><span class="p">29 €</span></li>
+            <li><span class="l">SDV personnalisé — 1h00</span><span class="p">70 €</span></li>
+            <li><span class="l">SDV personnalisé premium — 1h15</span><span class="p">85 €</span></li>
+            <li><span class="l">Hydraskin — 45 min</span><span class="p">75 €</span></li>
+            <li><span class="l">Peeling — 45 min</span><span class="p">85 €</span></li>
+            <li><span class="l">KaoLift — 45 min</span><span class="p">69 €</span></li>
+            <li><span class="l">Drainage visage — 20 min</span><span class="p">32 €</span></li>
+            <li><span class="l">Radiofréquence global — soin anti-âge — 45 min</span><span class="p">85 €</span></li>
+            <li><span class="l">Macro-exfoliation Bloomea — 35 min</span><span class="p">90 €</span></li>
+            <li><span class="l">Macro-exfoliation + radiofréquence Bloomea — 1h</span><span class="p">140 €</span></li>
+            <li><span class="l">Shirotchampi — 20 min</span><span class="p">30 €</span></li>
+            <li><span class="l">Massage Mukha Abhyanga — 30 min</span><span class="p">45 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Soin du corps <span class="count">11 soins</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Diagnostique minceur — 20 min</span><span class="p">29 €</span></li>
+            <li><span class="l">Drainage corps — 45 min</span><span class="p">70 €</span></li>
+            <li class="sub"><span class="l">Cure de 6 séances</span><span class="p">390 €</span></li>
+            <li><span class="l">Maderothérapie — 45 min</span><span class="p">75 €</span></li>
+            <li class="sub"><span class="l">Cure de 6 séances</span><span class="p">420 €</span></li>
+            <li><span class="l">Soin jambes légères Cryo — 40 min</span><span class="p">70 €</span></li>
+            <li><span class="l">Radiofréquence — 30 min</span><span class="p">39 €</span></li>
+            <li><span class="l">Cure de 5 séances amincissantes <em style="font-style:normal;opacity:.7;">(diagnostic offert)</em></span><span class="p">320 €</span></li>
+            <li><span class="l">Cure de 10 séances amincissantes <em style="font-style:normal;opacity:.7;">(diagnostic offert)</em></span><span class="p">620 €</span></li>
+            <li><span class="l">Protocole amincissant Mesoestetic — 1h</span><span class="p">90 €</span></li>
+            <li><span class="l">Cure de 10 séances <em style="font-style:normal;opacity:.7;">(+ complément offert)</em></span><span class="p">900 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Minceur <span class="count">11 soins</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Diagnostique minceur personnalisé — 30 min</span><span class="p">29 €</span></li>
+            <li><span class="l">Drainage corps — 45 min</span><span class="p">70 €</span></li>
+            <li><span class="l">Maderothérapie — 45 min</span><span class="p">75 €</span></li>
+            <li class="sub"><span class="l">Cure de 6 séances</span><span class="p">430 €</span></li>
+            <li class="sub"><span class="l">Cure de 10 séances</span><span class="p">690 €</span></li>
+            <li><span class="l">Soin jambes légères — 40 min</span><span class="p">70 €</span></li>
+            <li><span class="l">Pressothérapie — 30 min</span><span class="p">20 €</span></li>
+            <li class="sub"><span class="l">Cure de 10 séances</span><span class="p">180 €</span></li>
+            <li><span class="l">Bilan Oracles minceur — 30 min</span><span class="p">29 €</span></li>
+            <li><span class="l">Radiofréquence Bloomea — 20 / 40 min</span><span class="p">48 € / 76 €</span></li>
+            <li><span class="l">Épilation électrique — 15 à 60 min</span><span class="p">45 € à 120 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Épilations <span class="count">12 prestations</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Menton — 10 min</span><span class="p">9 €</span></li>
+            <li><span class="l">Lèvres — 15 min</span><span class="p">12 €</span></li>
+            <li><span class="l">Sourcils — 15 min</span><span class="p">15 €</span></li>
+            <li><span class="l">Joues — 15 min</span><span class="p">11 €</span></li>
+            <li><span class="l">Cuisses — 15 min</span><span class="p">23 €</span></li>
+            <li><span class="l">1/2 jambes — 15 min</span><span class="p">22 €</span></li>
+            <li><span class="l">Jambes complètes — 30 min</span><span class="p">33 €</span></li>
+            <li><span class="l">Maillot simple — 15 min</span><span class="p">20 €</span></li>
+            <li><span class="l">Maillot échancré — 25 min</span><span class="p">29 €</span></li>
+            <li><span class="l">Maillot intégral — 30 min</span><span class="p">33 €</span></li>
+            <li><span class="l">Aisselles — 15 min</span><span class="p">19 €</span></li>
+            <li><span class="l">Bras — 20 min</span><span class="p">23 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Épilation au fil <span class="count">3 prestations</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Sourcils — 20 min</span><span class="p">16 €</span></li>
+            <li><span class="l">Lèvres — 20 min</span><span class="p">16 €</span></li>
+            <li><span class="l">Menton — 10 min</span><span class="p">12 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Onglerie <span class="count">9 soins</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Vernis semi-permanent + manucure hybride (mains / pieds) — 45 min</span><span class="p">34 €</span></li>
+            <li><span class="l">Ongles naturels gel + manucure hybride — 1h</span><span class="p">50 €</span></li>
+            <li><span class="l">Rallongement gel + manucure hybride — 1h15</span><span class="p">60 €</span></li>
+            <li><span class="l">Remplissage + manucure hybride — 50 min</span><span class="p">38 € à 48 €</span></li>
+            <li><span class="l">Dépose + sérum fortifiant — 20 min</span><span class="p">22 €</span></li>
+            <li><span class="l">Soin des pieds — 30 min</span><span class="p">45 €</span></li>
+            <li><span class="l">Soin des pieds + VSP — 1h</span><span class="p">69 €</span></li>
+            <li><span class="l">Soin des mains — 50 min</span><span class="p">60 €</span></li>
+            <li><span class="l">Soin des ongles — 30 min</span><span class="p">25 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Regard <span class="count">6 soins</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Rehaussement de cils + teinture — 1h15</span><span class="p">75 €</span></li>
+            <li><span class="l">Restructuration de sourcils — 35 min</span><span class="p">35 €</span></li>
+            <li><span class="l">Restructuration de sourcils sans teinture — 25 min</span><span class="p">29 €</span></li>
+            <li><span class="l">Rehaussement de sourcils — 45 min</span><span class="p">59 €</span></li>
+            <li><span class="l">Teinture cils ou sourcils seule — 15 min</span><span class="p">18 €</span></li>
+            <li><span class="l">Soin spécifique yeux — 3 séances de 30 min</span><span class="p">250 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Maquillage permanent <span class="count">4 techniques</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Sourcils parfaits — microshading / poil à poil / mixte — 2h30</span><span class="p">320 €</span></li>
+            <li class="sub"><span class="l">Retouche à 4 semaines — 1h</span><span class="p">70 €</span></li>
+            <li class="sub"><span class="l">Retouche annuelle — 1h30</span><span class="p">180 €</span></li>
+            <li><span class="l">Velvet Lips — 2h30</span><span class="p">320 €</span></li>
+            <li class="sub"><span class="l">Retouche à 4 semaines — 1h30</span><span class="p">70 €</span></li>
+            <li class="sub"><span class="l">Retouche annuelle — 2h</span><span class="p">190 €</span></li>
+            <li><span class="l">Contour de bouche — 1h30</span><span class="p">190 €</span></li>
+            <li class="sub"><span class="l">Retouche à 4 semaines — 1h</span><span class="p">70 €</span></li>
+            <li class="sub"><span class="l">Retouche annuelle — 1h30</span><span class="p">180 €</span></li>
+            <li><span class="l">Ras de cils haut — 40 min</span><span class="p">180 €</span></li>
+            <li><span class="l">Ras de cils bas — 40 min</span><span class="p">150 €</span></li>
+            <li><span class="l">Ras de cils haut + bas — 1h</span><span class="p">300 €</span></li>
+            <li class="sub"><span class="l">Retouche à 4 semaines — 40 min</span><span class="p">70 €</span></li>
+            <li class="sub"><span class="l">Retouche annuelle — 40 min</span><span class="p">120 €</span></li>
+          </ul>
+        </details>
+
+        <details class="price-cat">
+          <summary><span class="sum-left">Soin maman / enfant <span class="count">8 soins</span></span><span class="toggle-ico">+</span></summary>
+          <ul class="price-list">
+            <li><span class="l">Massage femme enceinte — 1h</span><span class="p">75 €</span></li>
+            <li><span class="l">Atelier massage bébé — 45 min</span><span class="p">60 €</span></li>
+            <li><span class="l">Rituel du Prince / Princesse (3-6 ans) — 30 min</span><span class="p">30 €</span></li>
+            <li><span class="l">Rituel Super Héros / Jolie Ballerine (6-8 ans) — 30 min</span><span class="p">40 €</span></li>
+            <li><span class="l">Little Gourmandise (8-10 ans) — 35 min</span><span class="p">45 €</span></li>
+            <li><span class="l">Rituel Divin (10-14 ans) — 45 min</span><span class="p">60 €</span></li>
+            <li><span class="l">Spa Party — 1h30</span><span class="p">150 €</span></li>
+            <li><span class="l">Beauty Party — 1h</span><span class="p">18 €</span></li>
+          </ul>
+        </details>
+
+      </div>
+
+      <p class="partners-note">Soins réalisés avec les gammes professionnelles Mesoestetic et Bloomea.</p>
+
+      <div class="gift-row">
+        <p>Envie d'offrir un moment de détente ? Les bons cadeaux sont disponibles en institut, en ligne ou par téléphone.</p>
+        <a href="https://www.planity.com/nina-maison-de-beaute-38460-cremieu" target="_blank" rel="noopener" class="btn btn-taupe">J'achète un bon cadeau</a>
+      </div>
+    </div>
+
+    <div class="discover-strip">
+      <div class="discover-copy">
+        <div class="eyebrow">Rendez-vous découverte</div>
+        <h3>Venez rencontrer l'institut</h3>
+        <p>19 Grande Rue de la Halle, en plein cœur de la cité médiévale de Crémieu. Un rendez-vous découverte permet d'évaluer votre peau, de comprendre vos attentes et de vous orienter vers le soin le plus adapté — sans pression.</p>
+        <a href="https://www.planity.com/nina-maison-de-beaute-38460-cremieu" target="_blank" rel="noopener" class="btn btn-taupe">Réserver mon rendez-vous découverte</a>
+      </div>
+      <div class="discover-map">
+        <iframe title="Localisation de Nina - Maison de Beauté à Crémieu" src="https://www.google.com/maps?q=19+Grande+Rue+de+la+Halle,+38460+Cr%C3%A9mieu&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOUTIQUE (sage theme) -->
+<section class="sec-boutique" id="boutique" aria-labelledby="boutique-title">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Salle 03 · Produits / boutique &amp; conseils</div>
+      <h2 id="boutique-title">Boutique</h2>
+      <p class="tagline" style="color:var(--sage-deep);">« Des produits sélectionnés avec soin pour vous. »</p>
+      <p class="desc">L'institut propose à la vente les 4 gammes BAÏJA préférées de Nina : Monoï, Sweet Dreams, Lost Paradise et Minuit Chéri. Composez votre sélection ci-dessous, elle nous sera transmise pour confirmation et retrait en institut (ou envoi).</p>
+    </div>
+
+    <div class="range-tabs">
+      <input type="radio" name="rtab" id="tab-moana" checked>
+      <label for="tab-moana"><span class="rd rd-moana"></span>Monoï</label>
+      <input type="radio" name="rtab" id="tab-lost">
+      <label for="tab-lost"><span class="rd rd-lost"></span>Lost Paradise</label>
+      <input type="radio" name="rtab" id="tab-minuit">
+      <label for="tab-minuit"><span class="rd rd-minuit"></span>Minuit Chéri</label>
+      <input type="radio" name="rtab" id="tab-sweet">
+      <label for="tab-sweet"><span class="rd rd-sweet"></span>Sweet Dreams</label>
+
+      <div class="panels" style="width:100%;">
+        <div class="range-panel" id="panel-moana">
+          <div class="range-head">
+            <div>
+              <h3>Monoï <span class="rn">— Fleur de Tiaré Ensoleillée</span></h3>
+              <p>Noix de coco, tubéreuse et fleur de tiaré : la signature solaire et enveloppante de BAÏJA, celle qui a inspiré le nom de l'institut.</p>
+            </div>
+          </div>
+          <div class="product-grid" data-range="Monoï (Moana)">
+            <div class="product-card"><div class="pname">Gel douche Moana</div><div class="psize">300ml</div><div class="pbottom"><span class="pprice">14,90 €</span><button class="padd" data-id="moana-gel-douche" data-name="Gel douche Moana 300ml" data-price="14.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Crème Corps Moana</div><div class="psize">212ml</div><div class="pbottom"><span class="pprice">31,90 €</span><button class="padd" data-id="moana-creme-corps" data-name="Crème Corps Moana 212ml" data-price="31.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Huile Corps Moana</div><div class="psize">50ml</div><div class="pbottom"><span class="pprice">20,90 €</span><button class="padd" data-id="moana-huile-corps" data-name="Huile Corps Moana 50ml" data-price="20.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Brume Corps Moana</div><div class="psize">125ml</div><div class="pbottom"><span class="pprice">22,90 €</span><button class="padd" data-id="moana-brume-corps" data-name="Brume Corps Moana 125ml" data-price="22.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Bougie Moana</div><div class="psize">180gr</div><div class="pbottom"><span class="pprice">26,90 €</span><button class="padd" data-id="moana-bougie" data-name="Bougie Moana 180gr" data-price="26.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Eau de Parfum Moana</div><div class="psize">15ml</div><div class="pbottom"><span class="pprice">19,90 €</span><button class="padd" data-id="moana-edp" data-name="Eau de Parfum Moana 15ml" data-price="19.90">+ Ajouter</button></div></div>
+          </div>
+        </div>
+
+        <div class="range-panel" id="panel-lost">
+          <div class="range-head">
+            <div>
+              <h3>Lost Paradise <span class="rn">— Ananas des Antipodes</span></h3>
+              <p>Ananas juteux et fève de tonka réconfortante : une fragrance solaire et gourmande, pour celles qui aiment l'évasion.</p>
+            </div>
+          </div>
+          <div class="product-grid" data-range="Lost Paradise">
+            <div class="product-card"><div class="pname">Gel douche Lost Paradise</div><div class="psize">300ml</div><div class="pbottom"><span class="pprice">14,90 €</span><button class="padd" data-id="lost-gel-douche" data-name="Gel douche Lost Paradise 300ml" data-price="14.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Crème Corps Lost Paradise</div><div class="psize">170ml</div><div class="pbottom"><span class="pprice">31,90 €</span><button class="padd" data-id="lost-creme-corps" data-name="Crème Corps Lost Paradise 170ml" data-price="31.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Huile Corps Lost Paradise</div><div class="psize">50ml</div><div class="pbottom"><span class="pprice">20,90 €</span><button class="padd" data-id="lost-huile-corps" data-name="Huile Corps Lost Paradise 50ml" data-price="20.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Brume Corps Lost Paradise</div><div class="psize">125ml</div><div class="pbottom"><span class="pprice">22,90 €</span><button class="padd" data-id="lost-brume-corps" data-name="Brume Corps Lost Paradise 125ml" data-price="22.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Bougie Lost Paradise</div><div class="psize">180gr</div><div class="pbottom"><span class="pprice">26,90 €</span><button class="padd" data-id="lost-bougie" data-name="Bougie Lost Paradise 180gr" data-price="26.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Eau de Parfum Lost Paradise</div><div class="psize">15ml</div><div class="pbottom"><span class="pprice">19,90 €</span><button class="padd" data-id="lost-edp" data-name="Eau de Parfum Lost Paradise 15ml" data-price="19.90">+ Ajouter</button></div></div>
+          </div>
+        </div>
+
+        <div class="range-panel" id="panel-minuit">
+          <div class="range-head">
+            <div>
+              <h3>Minuit Chéri <span class="rn">— Tubéreuse Envoûtante</span></h3>
+              <p>Tubéreuse, jasmin et bois de santal : un sillage magnétique et affirmé, pour les soirs où l'on veut se sentir irrésistible.</p>
+            </div>
+          </div>
+          <div class="product-grid" data-range="Minuit Chéri">
+            <div class="product-card"><div class="pname">Gel Douche Minuit Chéri</div><div class="psize">200ml</div><div class="pbottom"><span class="pprice">12,90 €</span><button class="padd" data-id="minuit-gel-douche" data-name="Gel Douche Minuit Chéri 200ml" data-price="12.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Crème Corps Velours Minuit Chéri</div><div class="psize">175ml</div><div class="pbottom"><span class="pprice">27,90 €</span><button class="padd" data-id="minuit-creme-corps" data-name="Crème Corps Velours Minuit Chéri 175ml" data-price="27.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Huile Corps Minuit Chéri</div><div class="psize">50ml</div><div class="pbottom"><span class="pprice">20,90 €</span><button class="padd" data-id="minuit-huile-corps" data-name="Huile Corps Minuit Chéri 50ml" data-price="20.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Brume Corps Minuit Chéri</div><div class="psize">125ml</div><div class="pbottom"><span class="pprice">22,90 €</span><button class="padd" data-id="minuit-brume-corps" data-name="Brume Corps Minuit Chéri 125ml" data-price="22.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Bougie Minuit Chéri</div><div class="psize">180gr</div><div class="pbottom"><span class="pprice">26,90 €</span><button class="padd" data-id="minuit-bougie" data-name="Bougie Minuit Chéri 180gr" data-price="26.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Eau de Parfum Minuit Chéri</div><div class="psize">15ml</div><div class="pbottom"><span class="pprice">19,90 €</span><button class="padd" data-id="minuit-edp" data-name="Eau de Parfum Minuit Chéri 15ml" data-price="19.90">+ Ajouter</button></div></div>
+          </div>
+        </div>
+
+        <div class="range-panel" id="panel-sweet">
+          <div class="range-head">
+            <div>
+              <h3>Sweet Dreams <span class="rn">— Figue, Noix de Coco &amp; Ambre</span></h3>
+              <p>Une fragrance gourmande et réconfortante, à la figue fraîche et à l'ambre chaud. Gamme plus restreinte : parfum et senteur maison.</p>
+            </div>
+          </div>
+          <div class="product-grid" data-range="Sweet Dreams">
+            <div class="product-card"><div class="pname">Eau de Parfum Sweet Dreams</div><div class="psize">15ml</div><div class="pbottom"><span class="pprice">19,90 €</span><button class="padd" data-id="sweet-edp" data-name="Eau de Parfum Sweet Dreams 15ml" data-price="19.90">+ Ajouter</button></div></div>
+            <div class="product-card"><div class="pname">Coffret Cosy Home Sweet Dreams</div><div class="psize">Bouquet + parfum maison, 50ml</div><div class="pbottom"><span class="pprice">24,90 €</span><button class="padd" data-id="sweet-coffret" data-name="Coffret Cosy Home Sweet Dreams" data-price="24.90">+ Ajouter</button></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cart-bar" id="cartBar" style="display:none;">
+      <div class="ci">Sélection : <strong id="cartCount">0</strong> article(s) — Total estimé : <strong id="cartTotal">0,00 €</strong></div>
+      <button class="btn btn-sage" id="cartSend">Payer maintenant</button>
+    </div>
+    <p class="cart-note">Paiement 100% sécurisé par carte bancaire via Stripe. Adresse de livraison demandée à l'étape suivante — retrait en institut également possible, à préciser avec Nina après commande.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="on-paper" aria-labelledby="testi-title">
+  <div class="wrap">
+    <div class="section-head" style="margin-bottom:36px;">
+      <div class="eyebrow" style="color:var(--ink-soft);"><span style="width:22px;height:1px;background:var(--ink-soft);display:inline-block;"></span>Elles en parlent</div>
+      <h2 id="testi-title">Ce que disent nos clientes</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <p class="quote">Merci pour ce peeling qui m'a redonné de l'éclat. Ma peau respire et est repulpée. La prochaine fois tu t'occupes de mes sourcils.</p>
+        <div class="who">Chloé</div>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <p class="quote">J'adore mes ongles, le bombé est parfait et naturel.</p>
+        <div class="who">Emma</div>
+      </div>
+      <div class="testi-card">
+        <div class="quote-mark">"</div>
+        <p class="quote">J'avais besoin de me détendre et Krystelle m'a conseillé le massage signature de Nina. C'était génial ! Merci beaucoup.</p>
+        <div class="who">Géraldine</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a href="#top" class="brand"><img class="brand-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAAAXNSR0IArs4c6QAAAARzQklUCAgICHwIZIgAAAAJcEhZcwAADsQAAA7EAZUrDhsAAASGaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49J++7vycgaWQ9J1c1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCc/Pgo8eDp4bXBtZXRhIHhtbG5zOng9J2Fkb2JlOm5zOm1ldGEvJz4KPHJkZjpSREYgeG1sbnM6cmRmPSdodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjJz4KCiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0nJwogIHhtbG5zOkF0dHJpYj0naHR0cDovL25zLmF0dHJpYnV0aW9uLmNvbS9hZHMvMS4wLyc+CiAgPEF0dHJpYjpBZHM+CiAgIDxyZGY6U2VxPgogICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSdSZXNvdXJjZSc+CiAgICAgPEF0dHJpYjpDcmVhdGVkPjIwMjMtMTAtMzA8L0F0dHJpYjpDcmVhdGVkPgogICAgIDxBdHRyaWI6RXh0SWQ+NjhjYTlhYzItMjg3Zi00ZjUyLWIwNDctNzJkZGVlNzQ0MDBhPC9BdHRyaWI6RXh0SWQ+CiAgICAgPEF0dHJpYjpGYklkPjUyNTI2NTkxNDE3OTU4MDwvQXR0cmliOkZiSWQ+CiAgICAgPEF0dHJpYjpUb3VjaFR5cGU+MjwvQXR0cmliOlRvdWNoVHlwZT4KICAgIDwvcmRmOmxpPgogICA8L3JkZjpTZXE+CiAgPC9BdHRyaWI6QWRzPgogPC9yZGY6RGVzY3JpcHRpb24+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpkYz0naHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8nPgogIDxkYzp0aXRsZT4KICAgPHJkZjpBbHQ+CiAgICA8cmRmOmxpIHhtbDpsYW5nPSd4LWRlZmF1bHQnPkJsYWNrICZhbXA7IFdoaXRlIFNpbXBsZSAgQ2lyY2xlIExvZ28gLSAxMjwvcmRmOmxpPgogICA8L3JkZjpBbHQ+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mmtq9dVXr7q9Rl5TPf5fnn76aT3xxBPaZJNNil7fY489pmeffVabbbaZVl555V7be/nll3X//feXfc7YsWO1xRZbVBRfz7/HhhtuqLvuumvx91tssYXGjh1bUVtYSrj759M03aPZcdRbjDGNfbT11ltHSXHcuHExl8sVfc4pp5wSJUVJ8eGHH67pPJ2dnXG99daLkuKECRNqjjefz0dJcZVVVqn62J/+9Kdx5MiRi69FUmxra4t77rlnfP7556tqa/78+fGwww6LQ4cOfV97ZhYPPvjgOGfOnKrjO/bYY6OkuPrqq8c333xzice//vWvR0nx+uuvr7rtanW9Lnp+JUkSd9ppp5peB13XV+rrW9/6VgOu5P1KXZek+PGPfzy+8MILVbXXqGuq1//L8ccfHyXFs88+u+jj3/rWt6Kk+Kc//ami9i666KKy1ysp7rHHHhXHV+7vISleddVVFbdVQlq/d9yBIU3Tvcxs82bGQA99gHv++ed14YUX6uCDD37fz999911NnTq1z+3PmDFDM2fO1JAhQ/Tvf/9bt99+u7bZZps+t1upiy66SD/60Y80atQoHXXUUVp55ZX19NNP66qrrtINN9ygIUOGVNzW3Llzte222+qRRx7R6quvri9+8YsaN26cXn75ZV188cU677zzdOutt+q2227TSiutVHWsL7zwgr785S/r6quvrvrYevvpT3+6+G7AnDlzNGPGDP3tb3/TxIkTNWPGDG277bZVt3nggQdq6623XuLnm2yySZ/jrdSJJ564+LrmzZun888/XzfffLO+/vWva8aMGVW3V+9ravb/SylbbbWVzj777MXfn3LKKXruued00kknadlll5UkrbHGGlW32/111t2mm25ae7BoTfTQe/+EPGLEiDh+/PiYz+ff9/jUqVOjpMU921p76DvuuGMMIcQ//vGPUVLcZ599amqn1h76gQceGCXFo446aon2brvttqra2meffaKkuOeee8YFCxa877FFixbFSZMmLe7xVaOrt5ckSZQUf/nLX77v8Wb00J966qklHjvjjDOipDh27Ng4f/78itvsur7f//739Qy1KqWu64UXXoiS4korrVRVe426pnr9v9S7h97TVlttFSXFF198sabjy73O6oQeegMwKW6Amzx5sp577jlddNFFi3+2cOFCnXrqqRo7dqz23nvvmtt++OGHddNNN+nTn/60vvCFL2ijjTbS9OnTNWvWrHqEXpGuT//XXnvt+8Y8QwhV9XyeeeYZXXHFFRo7dqymTZum4cOHv+9xd9cFF1yg8ePH6+abb9Y999xTdaxTpkzRkCFDdNRRR+nuu++u+vhG+8Y3vqH99ttPr732mqZNm9bscOrilVdekdS/dwlKGQj/L0A53HIf4L7zne/onHPO0QknnKCDDjpIIQT99re/1WuvvaZTTz1VzzzzTM1tn3baaZIKiUCSDjvsME2ePFlnnnlmXW7nV2LKlCk6//zz9eijj2qDDTbQLrvsor333luTJk3SiBEjKm7n9ttvlyTttddeGjlyZNHnuLs+97nP6eSTT9Ztt91W8QShLptuuql+8Ytf6LDDDtN+++2n+++/f/HtzIFi0qRJuuyyy/Svf/1LhxxySFXHXnnllXr66aff97NRo0bp2GOPrWeIZR111FGLJy/OmzdPN9xwgzbddFP95je/qam9el7TQPh/6W9Tp05d4jX+4Q9/WJMmTWpSRCin6Qm9ra3t521tbUc2O456GjZsmBYuXFiXtsaMGaMpU6bo5JNP1iWXXKL99ttPp5xyij7wgQ9o8uTJOuKII2pq9/XXX9e0adP0oQ99SNttt50k6aCDDtLRRx+tc889Vz/+8Y9LJsZ6WnvttfXggw/qtNNO07Rp03T99dfr+uuv1+GHH66f//znmjx5ckXtzJs3T5J6nend9fjbb79dU7yHHnqo/v73v+uKK67QwQcfrCuuuKKmdhql+/hztbp+992NHTu2XxP6lVdeucTPhg8frrlz59bUXr2uaaD8v/S3c845Z4mf7bfffn1O6MOGDbvJzPrUxgD0AUlfamYATU3ouVzuz5KmNzOGRthtt93aJC2oV3uHH364fv3rX+uEE07Q7Nmz9Z///EcnnniiRowYoSRJamrzrLPO0qJFi7TNNtvolltuWfzzrbfeWjNmzNAFF1ygww47rE5XUN7qq6+u0047TVOnTtUdd9yh008/XVdeeaWmTJmiTTbZpOikpp5WWaWw/fwTTzxR9nkzZ86UJK266qo1x3veeefpvvvu05VXXqkzzzyz5nYaoeuOTSVLnXr6yU9+ssQQTn+/6d53330aP368JGn+/Pn661//qm9+85vadddd9fTTT2vMmDFVtVeva6r3/0tXDKU++Hf9vNlJb8aMGVpttdXe97N63JXaeeedP/GXv/yls88NDTy5ZgeAOot1nBS3cOHCGGOMhx9++OLlV8stt1ycN29ejDHGyZMnVz0p7r333osrrrhi2WUp66yzTuzs7Ky4zVonxZValrbXXntFSfG4446rqJ25c+fG4cOHR3ePjz32WNHnzJo1K44cOTKGEKpaBlVsgtVdd90VzSwOGTIkTpw4cUBMimtvb49bbrlllBSvu+66itscyJPiYoxx//33j5Li9OnTK26vntfUiP+Xiy++OEqKBx10UNHHu/6Od911V00xMylu6dT0W+6ozBFHHKGzzjpLCxcu1Le//e3F44y19NAvueQSvf7669pjjz20/fbbL/H45ZdfrrvuukvXXXedPvnJT/Y19JIWLlyoiRMnapdddtFPfvITjRs3TpK0aNGixZOhRo8eXVFbyy67rI455hj94Ac/0O67767LL79cm2/+3wmnTzzxhPbee2+98847Ovzww5fodVRryy231EknnaQjjjhCd955Z5/aqoc5c+Zo8uTJuvvuu/U///M/2n333ZsdUl28/fbbuvfeeyUVJko2QyP+X3bZZRcNGzZM06ZN06RJk9739zr77LN19913a7XVVtNmm21Wr8vAUoCEPkistNJKOvLII3Xttdfqm9/8Zp/aOv3005UkiU4//XStvfbaSzy+8cYba7fddtPpp5/e0IT+5ptvavTo0brwwgt14YUXaoMNNtDyyy+vxx9/XG+++abGjh2rAw44oOL2jjnmGL344os655xztOWWW2rixIkaP368Xn75Zd1+++3q6OjQ/vvvr5NPPrku8X/3u9/VLbfcomuvvbYu7VXjkEMOWTyTf968ebr33nu1cOFCbbbZZrr88str+qB35plnavr0JUfANt54Y5100kl9jrkSkydPXjwZcsGCBbrnnnv09ttva911162pAmE9rqkR/y8rrLCCTj31VB122GH6xCc+oS233FJrrLGGZs6cqYceekghBJ199tlN+xDTpfvrrLv9999f+++/fxMiAvpZbMAt91IOPfTQqm6533jjjVFS3H333Us+p7OzM6677rpVtVvrLfeFCxfGX/3qV3GLLbaIIYTF66i/9rWvxVmzZlXVVperr7467rDDDtHdo6QYQohbb711vPTSS2tqr9zt29mzZ8dVV121qZXiRo0aFSdOnBh/9atfxffee6/qNnurqrbddtvV/0J6KHZdQ4cOjeuss048/PDD4+uvv15Ve/W6pkb9v3S55ppr4kc/+tGYpmmUFIcMGRJ32WWXeMcdd1TVTk/1uuVe6qvSobAyuOXeALXNqEJZ2Yu1vdlxDDYxRuVyuaqqw/XW3vz58zVy5Ei1tVFyAQNXe3u7FixYoFGjRi0tr9WQJElHs4NoNST0BiChA0BZJPQGWCo+CgIA0OpI6AAAtAASOgAALYCEDgBACyChAwDQAkjoAAC0ABI6AAAtgIQOAEALoJZ7Y3RKOqrZQQDAANWKW6cCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIC++P911d56akYA3AAAAABJRU5ErkJggg==" alt="Nina - Maison de Beauté"></a>
+      <p>Institut de beauté & centre de formation esthétique au cœur de la cité médiévale de Crémieu.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/profile.php?id=61553132458096" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FBF7EF" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="https://instagram.com/ninamaisondebeaute" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FBF7EF" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <h4>Nous trouver</h4>
+      <ul class="footer-list">
+        <li>19 Grande Rue de la Halle<br>38460 Crémieu</li>
+        <li><a href="tel:0955426199">09 55 42 61 99</a></li>
+        <li><a href="mailto:ninamaisondebeaute@gmail.com">ninamaisondebeaute@gmail.com</a></li>
+      </ul>
+      <div style="margin-top:24px;"><a href="#formations" class="btn btn-outline-dark" style="padding:11px 18px; font-size:12px;">Formations pro</a></div>
+    </div>
+    <div>
+      <h4>Horaires</h4>
+      <div class="hours-table">
+        <div class="row"><span>Lundi</span><span>11h30 – 19h00</span></div>
+        <div class="row"><span>Mardi</span><span>9h00 – 19h00</span></div>
+        <div class="row"><span>Mercredi</span><span>9h00 – 19h00</span></div>
+        <div class="row"><span>Jeudi</span><span>9h00 – 19h00</span></div>
+        <div class="row"><span>Vendredi</span><span>9h00 – 19h00</span></div>
+        <div class="row"><span>Samedi</span><span>9h00 – 12h00</span></div>
+        <div class="row"><span>Dimanche</span><span>Fermé</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <span>© 2026 Nina — Maison de Beauté, Crémieu. SIRET 815 406 053 00042 · Déclaration d'activité n°82&nbsp;38&nbsp;06224&nbsp;38 (Préfet Rhône-Alpes-Auvergne).</span>
+    <span><a href="#" onclick="return false;">Mentions légales</a> · <a href="#" onclick="return false;">Politique de confidentialité</a></span>
+  </div>
+</footer>
+
+<script>
+  var burgerBtn = document.getElementById('burgerBtn');
+  var mobileMenu = document.getElementById('mobileMenu');
+  burgerBtn.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burgerBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.mobile-menu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      burgerBtn.setAttribute('aria-expanded','false');
+    });
+  });
+
+  var formationForm = document.getElementById('formationForm');
+  formationForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var nom = document.getElementById('f-nom').value;
+    var tel = document.getElementById('f-tel').value;
+    var email = document.getElementById('f-email').value;
+    var formation = document.getElementById('f-formation').value;
+    var message = document.getElementById('f-message').value;
+    var subject = encodeURIComponent('Demande de programme — ' + formation);
+    var body = encodeURIComponent(
+      'Nom : ' + nom + '\n' +
+      'Téléphone : ' + tel + '\n' +
+      'E-mail : ' + email + '\n' +
+      'Formation souhaitée : ' + formation + '\n\n' +
+      'Message :\n' + message
+    );
+    window.location.href = 'mailto:ninamaisondebeaute@gmail.com?subject=' + subject + '&body=' + body;
+  });
+
+  // Boutique cart logic (panier réel -> Stripe Checkout)
+  var cart = {}; // { id: {name, price, qty} }
+  var cartBar = document.getElementById('cartBar');
+  var cartCount = document.getElementById('cartCount');
+  var cartTotal = document.getElementById('cartTotal');
+  var cartSend = document.getElementById('cartSend');
+
+  function formatPrice(n){
+    return n.toFixed(2).replace('.', ',') + ' €';
+  }
+
+  function cartItemsArray(){
+    return Object.keys(cart).map(function(id){ return cart[id]; });
+  }
+
+  function refreshCartBar(){
+    var items = cartItemsArray();
+    var totalQty = items.reduce(function(sum, it){ return sum + it.qty; }, 0);
+    if(totalQty === 0){
+      cartBar.style.display = 'none';
+      return;
+    }
+    cartBar.style.display = 'flex';
+    cartCount.textContent = totalQty;
+    var total = items.reduce(function(sum, it){ return sum + it.price * it.qty; }, 0);
+    cartTotal.textContent = formatPrice(total);
+    cartSend.disabled = false;
+    cartSend.textContent = 'Payer maintenant';
+  }
+
+  document.querySelectorAll('.padd').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-id');
+      var name = btn.getAttribute('data-name');
+      var price = parseFloat(btn.getAttribute('data-price'));
+      if(cart[id]){
+        cart[id].qty += 1;
+      } else {
+        cart[id] = { id: id, name: name, price: price, qty: 1 };
+      }
+      btn.textContent = 'Ajouté ✓';
+      btn.classList.add('added');
+      setTimeout(function(){
+        btn.textContent = '+ Ajouter';
+        btn.classList.remove('added');
+      }, 1200);
+      refreshCartBar();
+    });
+  });
+
+  cartSend.addEventListener('click', function(){
+    var items = cartItemsArray();
+    if(items.length === 0) return;
+
+    cartSend.disabled = true;
+    cartSend.textContent = 'Redirection…';
+
+    fetch('/api/create-checkout-session', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        items: items.map(function(it){ return { id: it.id, qty: it.qty }; }),
+        origin: window.location.origin
+      })
+    })
+    .then(function(r){ return r.json().then(function(data){ return { ok: r.ok, data: data }; }); })
+    .then(function(res){
+      if(res.ok && res.data.url){
+        window.location.href = res.data.url;
+      } else {
+        alert((res.data && res.data.error) || 'Une erreur est survenue, merci de réessayer.');
+        cartSend.disabled = false;
+        cartSend.textContent = 'Payer maintenant';
+      }
+    })
+    .catch(function(){
+      alert('Impossible de contacter le serveur de paiement. Merci de réessayer dans un instant.');
+      cartSend.disabled = false;
+      cartSend.textContent = 'Payer maintenant';
+    });
+  });
+</script>
+
+</body>
+
+</html>
