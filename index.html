@@ -863,7 +863,11 @@
           <p>Dites-nous quelle(s) technique(s) t'intéresse(nt) : nous t'envoyons le programme détaillé, les dates disponibles et le tarif sous 48h.</p>
           <p style="margin-top:22px; font-size:13.5px;">Tu préfères en parler directement ?<br><a href="tel:0763329370" style="font-weight:700; color:var(--tan);">07 63 32 93 70</a></p>
         </div>
-        <form class="lead-form" id="formationForm">
+        <form class="lead-form" id="formationForm" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="5d97c7c3-d844-4b9c-a59e-3c8b4c426258">
+          <input type="hidden" name="from_name" value="Site Nina Maison de Beauté">
+          <input type="hidden" name="subject" value="Demande de programme de formation">
+          <input type="checkbox" name="botcheck" id="f-botcheck" style="display:none" tabindex="-1" autocomplete="off">
           <div class="field-row">
             <div><label for="f-nom">Nom</label><input type="text" id="f-nom" name="nom" required></div>
             <div><label for="f-tel">Téléphone</label><input type="tel" id="f-tel" name="telephone" required></div>
@@ -885,7 +889,7 @@
           </div>
           <div><label for="f-message">Ton message (optionnel)</label><textarea id="f-message" name="message" placeholder="Ta situation, ton projet, tes disponibilités..."></textarea></div>
           <button type="submit" class="btn btn-tan">Recevoir le programme</button>
-          <p class="form-note">En envoyant ce formulaire, ta messagerie s'ouvre pré-remplie vers ninamaisondebeaute@gmail.com.</p>
+          <p class="form-note" id="formationStatus" role="status" aria-live="polite">En envoyant ce formulaire, ta demande nous parvient directement : nous te répondons sous 48h.</p>
         </form>
       </div>
     </div>
@@ -1275,22 +1279,31 @@
   });
 
   var formationForm = document.getElementById('formationForm');
+  var formationStatus = document.getElementById('formationStatus');
   formationForm.addEventListener('submit', function(e){
     e.preventDefault();
-    var nom = document.getElementById('f-nom').value;
-    var tel = document.getElementById('f-tel').value;
-    var email = document.getElementById('f-email').value;
+    var btn = formationForm.querySelector('button[type="submit"]');
+    var btnLabel = btn.textContent;
     var formation = document.getElementById('f-formation').value;
-    var message = document.getElementById('f-message').value;
-    var subject = encodeURIComponent('Demande de programme — ' + formation);
-    var body = encodeURIComponent(
-      'Nom : ' + nom + '\n' +
-      'Téléphone : ' + tel + '\n' +
-      'E-mail : ' + email + '\n' +
-      'Formation souhaitée : ' + formation + '\n\n' +
-      'Message :\n' + message
-    );
-    window.location.href = 'mailto:ninamaisondebeaute@gmail.com?subject=' + subject + '&body=' + body;
+    var data = new FormData(formationForm);
+    data.set('subject', 'Demande de programme — ' + formation);
+    btn.disabled = true; btn.textContent = 'Envoi en cours…';
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    }).then(function(res){ return res.json(); }).then(function(json){
+      if (json && json.success) {
+        formationForm.reset();
+        formationStatus.textContent = 'Merci ! Ta demande a bien été envoyée, nous te répondons sous 48h.';
+      } else {
+        throw new Error('send failed');
+      }
+    }).catch(function(){
+      formationStatus.textContent = "L'envoi n'a pas abouti. Réessaie ou appelle-nous au 07 63 32 93 70.";
+    }).then(function(){
+      btn.disabled = false; btn.textContent = btnLabel;
+    });
   });
 
   // Boutique cart logic (panier réel -> Stripe Checkout)
